@@ -191,7 +191,6 @@ class Calendar extends Component {
         <div className='month'>
           <img className="month-arrow-left" src={ic_back} alt="back" onClick={this.prev.bind(this)}></img>
           <span className="month-year">{month+' '+year}</span>
-          </p>
           <img className="month-arrow-right" src={ic_forward} alt="forward" onClick={this.next.bind(this)}></img>
         </div>
         <div className='footer'>
