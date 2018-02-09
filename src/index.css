@@ -202,3 +202,9 @@
 .non-current {
   opacity: 0.2;
 }
+
+.flex-2.header.center{
+  min-width: auto !important; 
+  max-height: 50px !important;
+  padding-top: 32px;
+}

@@ -10,7 +10,7 @@ const config = {
     weeks: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     week_subs: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'],
     week_subs_letter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    weekDay_subs: ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"],
+    weekDay_subs: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
     today: function() {
       return new Date();
     }
