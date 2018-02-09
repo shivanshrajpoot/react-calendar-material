@@ -6,9 +6,10 @@ import ic_forward from './ic_forward.svg';
 
 const config = {
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    month_subs: ['Jan', 'Feb', 'Apr', 'Mar', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+    month_subs: ['Jan', 'Feb', 'Mar', 'Apr', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
     weeks: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     week_subs: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'],
+    weekDay_subs: ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"],
     today: function() {
       return new Date();
     }
@@ -165,7 +166,7 @@ class Calendar extends Component {
 
     // get the month days
     var days = this.renderDays(copy);
-
+    var dateToBeShown = config.weekDay_subs[this.state.selected.getDay()]+' , '+config.month_subs[this.state.selected.getMonth()]+' '+this.state.selected.getDate()
     var tMonth = config.months[this.state.selected.getMonth()];
     var tDate = this.state.selected.getDate();
     var month = config.months[this.state.current.getMonth()];
@@ -177,8 +178,8 @@ class Calendar extends Component {
       upperDate = (<div className='flex-2 header center' style={{
           backgroundColor: this.props.accentColor
         }}>
-        <p className="header-month">{tMonth.toUpperCase()}</p>
-        <p className="header-day">{tDate}</p>
+        <p className="header-month">{year}</p>
+        <p className="header-day">{dateToBeShown}</p>
       </div>);
     }
     return (<div className={this.props.orientation}>
