@@ -208,3 +208,6 @@
   max-height: 50px !important;
   padding-top: 32px;
 }
+.fa-angle-left, .fa-angle-right{
+  font-size:24px;
+}
