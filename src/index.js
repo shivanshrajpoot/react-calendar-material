@@ -6,9 +6,10 @@ import ic_forward from './ic_forward.svg';
 
 const config = {
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    month_subs: ['Jan', 'Feb', 'Mar', 'Apr', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+    month_subs: ['Jan', 'Feb', 'Mar', 'Apr', 'May','Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
     weeks: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     week_subs: ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'],
+    week_subs_letter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     weekDay_subs: ["Sun","Mon","Tues","Wed","Thu","Fri","Sat"],
     today: function() {
       return new Date();
@@ -89,10 +90,12 @@ class Calendar extends Component {
                 style={containerStyle}>
               <div className={today} style={todayStyle}></div>
               <div className={selected} style={selectedStyle}></div>
-              <p onClick={ (ev) => {
-                var day = ev.target.innerHTML;
-                this._onDatePicked(opts.month, day);
-              }}>{opts.date.getDate()}</p>
+              <div>
+                <p onClick={ (ev) => {
+                  var day = ev.target.innerHTML;
+                  this._onDatePicked(opts.month, day);
+                }}>{opts.date.getDate()}</p>
+              </div>
             </div>);
   }
 
@@ -148,9 +151,9 @@ class Calendar extends Component {
   renderHeaders() {
     var header = [];
 
-    for (var i = 0; i < config.week_subs.length; i++) {
+    for (var i = 0; i < config.week_subs_letter.length; i++) {
       header.push(<p className='day-headers noselect'>
-                    {config.week_subs[i]}
+                    {config.week_subs_letter[i]}
                   </p>);
     }
 
@@ -169,7 +172,7 @@ class Calendar extends Component {
     var dateToBeShown = config.weekDay_subs[this.state.selected.getDay()]+' , '+config.month_subs[this.state.selected.getMonth()]+' '+this.state.selected.getDate()
     var tMonth = config.months[this.state.selected.getMonth()];
     var tDate = this.state.selected.getDate();
-    var month = config.months[this.state.current.getMonth()];
+    var month = config.month_subs[this.state.current.getMonth()];
     var year = this.state.current.getFullYear();
     var date = this.state.current.getDate();
 
