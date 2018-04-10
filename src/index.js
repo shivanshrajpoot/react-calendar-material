@@ -190,10 +190,8 @@ class Calendar extends Component {
       <div className="padding">
         <div className='month'>
           <i className="fa fa-angle-left"  alt="back" onClick={this.prev.bind(this)}></i>
-          <img className="month-arrow-left" src={ic_back} alt="back" onClick={this.prev.bind(this)}></img>
           <span className="month-year">{month+' '+year}</span>
           <i className="fa fa-angle-right"  alt="forward" onClick={this.next.bind(this)}></i>
-          <img className="month-arrow-right" src={ic_forward} alt="forward" onClick={this.next.bind(this)}></img>
         </div>
         <div className='footer'>
           {header}
